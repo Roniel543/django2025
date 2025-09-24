@@ -17,7 +17,7 @@
             />
           </a>
           <div class="most-read-blog__content">
-            <a href="/contenido/{{articulo.id}}">
+            <a href="{% url 'contenido' articulo.id %}">
               <h3 class="most-read-blog__title">
                 {{articulo.title}}
               </h3>
