@@ -21,7 +21,8 @@ from blog.views import index
 from django.http import HttpResponse
 from django.conf import settings
 from django.conf.urls.static import static
-
+from miapp.views import ejemplo, otra
+from blog import views
 
 
 
@@ -33,4 +34,7 @@ urlpatterns = [
     path('',hello),
     path('admin/', admin.site.urls),
     path('blog/', index),
+    path('ejemplo/', ejemplo),
+    path('otra/', otra),
+    path('articulo/<int:articulo_id>',views.detalle_Articulo, name='contenido'),
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

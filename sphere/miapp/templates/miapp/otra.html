@@ -1,0 +1,22 @@
+{% extends 'miapp/base.html' %}
+
+{% block navbar %}
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/ejemplo/">Ejemplo</a> |
+    <a href="/otra/">Otra Página (actual)</a>
+    <span style="color: green;"> - Navbar personalizado</span>
+</nav>
+{% endblock %}
+
+{% block sidebar %}
+<ul>
+    <li>Sidebar especial</li>
+    <li>Enlaces útiles</li>
+</ul>
+{% endblock %}
+
+{% block contenido %}
+    <h2>¡Bienvenido a la otra página!</h2>
+    <p>Este es un ejemplo de cómo puedes sobrescribir navbar, sidebar y contenido.</p>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sitio</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a mi Sitio</h1>
+        {% block navbar %}
+        <!-- Navbar por defecto -->
+        {% endblock %}
+    </header>
+    <div style="display: flex;">
+        <aside style="width: 200px;">
+            {% block sidebar %}
+            <!-- Sidebar por defecto -->
+
+            {% endblock %}
+        </aside>
+        <main style="flex: 1;">
+            {% block contenido %}
+            <!-- Aquí va el contenido de cada página -->
+            {% endblock %}
+        </main>
+    </div>
+    <footer>
+        <p>
+            Pie de Página
+        </p>
+    </footer>
+    
+</body>
+</html>
