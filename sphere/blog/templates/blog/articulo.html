@@ -65,7 +65,7 @@
                             height="1.25em"
                             viewBox="0 0 30 31"
                             class="s-mr-1 fill yellow-400 svg-icon"
-                            fill="currentColor"
+                            fill="currentColor" 
                         >
                             <rect x="7" y="0.5" width="2" height="7.5" rx="1"></rect>
                             <rect x="14" y="0.5" width="2" height="7.5" rx="1"></rect>
@@ -219,15 +219,16 @@
             </div>
             <section class="create-comment">
                 <h3 class="create-comment__title">¿Qué te pareció el artículo?</h3>
-                <form method="POST" action="/comentar/{{articulo.id}}" class="create-comment__form">
+                <form method="POST" action="/blog/comentar/{{articulo.id}}/" class="create-comment__form">
                     {% csrf_token %}
                     <textarea name="comentario"
-      class="create-comment__input"
+                        class="create-comment__input"
                         placeholder="Escribe una respuesta"
                         cols="30"
                         rows="10"
-                    /></textarea>
-    <input class="create-comment__button" type="submit" value="Publicar">
+                        required>
+                    </textarea>
+                    <input class="create-comment__button" type="submit" value="Publicar">
                 </form>
             </section>
             <section class="comment-secton">

@@ -1,5 +1,6 @@
 from email.policy import default
 from random import choices
+from django.utils import timezone
 from unicodedata import category
 from django.db import models
 from datetime import date
@@ -23,4 +24,13 @@ class Articulo(models.Model):
 
     def __str__(self):
         return self.title
-    
+
+
+class Comentario(models.Model):
+    articulo = models.ForeignKey(Articulo, on_delete=models.CASCADE)
+    texto = models.TextField(default='')
+    autor = models.CharField(max_length=255, default='anónimo')
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.autor

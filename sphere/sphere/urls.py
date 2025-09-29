@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.http import HttpResponse
-from django.urls import path
+from django.urls import path, include
 from blog.views import index
 from django.http import HttpResponse
 from django.conf import settings
@@ -33,8 +33,7 @@ def hello(request):
 urlpatterns = [
     path('',hello),
     path('admin/', admin.site.urls),
-    path('blog/', index),
+    path('blog/', include('blog.urls')),
     path('ejemplo/', ejemplo),
     path('otra/', otra),
-    path('articulo/<int:articulo_id>',views.detalle_Articulo, name='contenido'),
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
