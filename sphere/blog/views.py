@@ -36,6 +36,12 @@ def detalle_Articulo(request, articulo_id):
     return render(request, 'blog/articulo.html', context)
 
 def comentar(request, articulo_id):
+    # Debug: Verificar sesión y token CSRF
+    print(f"Sesión ID: {request.session.session_key}")
+    print(f"Usuario autenticado: {request.user.is_authenticated}")
+    print(f"Usuario: {request.user}")
+    print(f"Token CSRF recibido: {request.POST.get('csrfmiddlewaretoken')}")
+    
     if request.method == 'POST':
         objArticulo = Articulo.objects.get(pk=articulo_id)
         comentario = request.POST.get('comentario')
@@ -44,7 +50,7 @@ def comentar(request, articulo_id):
         print(f"Comentario: {comentario}")
         print(f"Autor: {autor}")
         
-        nuevo_comentario = Comentario()
+        nuevo_comentario = Comentario() 
         nuevo_comentario.texto = comentario
         nuevo_comentario.autor = autor
         nuevo_comentario.articulo = objArticulo

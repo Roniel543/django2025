@@ -33,7 +33,7 @@ def hello(request):
 urlpatterns = [
     path('',hello),
     path('admin/', admin.site.urls),
-    path('blog/', include('blog.urls')),
+    path('blog/',include('blog.urls')),
     path('ejemplo/', ejemplo),
     path('otra/', otra),
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
